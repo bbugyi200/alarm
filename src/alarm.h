@@ -8,8 +8,6 @@
  * @par Command-line alarm application.
  **/
 
-int func();
-
 /** Main alarm functions. **/
 namespace Alarm { }
 
