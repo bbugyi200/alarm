@@ -1,13 +1,12 @@
 #include "CppUTest/TestHarness.h"
 #include "CppUTestExt/MockSupport.h"
-#include <string.h>
-#include "../src/cli.h"
+#include "test.h"
 
 TEST_GROUP(cli)
 {
 };
 
-TEST(cli, parse_args)
+TEST(cli, test_parse_args)
 {
     static const int ARG_COUNT = 2;
     static const char* TIME = "18:35";
