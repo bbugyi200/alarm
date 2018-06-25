@@ -1,10 +1,21 @@
 #ifndef CLI
 #define CLI
 
-/** @file cli.h **/
-
+/** Command-line argument namespace. **/
 namespace cli {
-   void parse_args(int, char**);
+
+    /** The Options structure is used to hold command-line arguments and flags. **/
+    struct Arguments {
+        bool debug;
+        bool resume;
+        bool stop;
+        bool tomorrow;
+        std::string time;
+    };
+
+    using Arguments = struct Arguments;
+
+    Arguments* parse_args(int, char**);
 }
 
 #endif /* CLI */

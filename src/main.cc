@@ -4,6 +4,6 @@
 
 int main(int argc, char *argv[])
 {
-    cli::parse_args(argc, argv);
+    auto args = cli::parse_args(argc, argv);
     return 0;
 }
