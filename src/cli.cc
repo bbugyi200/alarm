@@ -13,7 +13,7 @@ static const std::string program_description =
     "Sets panel countdowns for upcoming khal events.";
 
 static const std::string usage =
-    "khal-count [-h] [-d]";
+    "countdown [-h] [-d]";
 
 /** Parses command-line arguments.
  *  
