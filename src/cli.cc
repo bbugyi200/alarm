@@ -7,6 +7,12 @@
 
 namespace po = boost::program_options;
 
+static const std::string program_description =
+    "alarm - A command-line alarm application.";
+
+static const std::string usage =
+    "alarm [-h] [-d] [--resume | --stop] [-T] TIME";
+
 /** Parses command-line arguments.
  *  
  * @param argc: The argument count.
@@ -15,8 +21,8 @@ namespace po = boost::program_options;
 cli::Arguments* cli::parse_args(int argc, char **argv) {
     po::options_description visible("Named options");
     visible.add_options()
-        ("help", "Produce help message.")
-        ("debug", "Enable debug mode.")
+        ("help,h", "Produce help message.")
+        ("debug,d", "Enable debug mode.")
         ("resume", "Resume alarm.")
         ("stop", "Stop alarm.")
         ("tomorrow,T", "Set alarm for tomorrow.");
@@ -36,7 +42,9 @@ cli::Arguments* cli::parse_args(int argc, char **argv) {
     po::notify(vm);
 
     if (vm.count("help")) {
-        std::cout << visible << std::endl;
+        std::cout << program_description << "\n\n" 
+                  << "usage: " << usage << "\n\n"
+                  << visible << std::endl;
     }
 
     cli::Arguments *args = new Arguments;
@@ -48,7 +56,7 @@ cli::Arguments* cli::parse_args(int argc, char **argv) {
     args->stop = flag_is_set("stop");
     args->tomorrow = flag_is_set("tomorrow");
 
-    if (vm.count("time") > 0) {
+    if (flag_is_set("time")) {
         args->time = vm["time"].as<std::string>();
     } else {
         args->time = "";
