@@ -1,5 +1,5 @@
-#ifndef CLI
-#define CLI
+#ifndef INCLUDED_CLI
+#define INCLUDED_CLI
 
 /** Command-line argument namespace. **/
 namespace cli {
@@ -7,9 +7,6 @@ namespace cli {
     /** The Options structure is used to hold command-line arguments and flags. **/
     struct Arguments {
         bool debug;
-        bool resume;
-        bool stop;
-        bool tomorrow;
         std::string time;
     };
 
@@ -18,4 +15,4 @@ namespace cli {
     Arguments* parse_args(int, char**);
 }
 
-#endif /* CLI */
+#endif /* INCLUDED_CLI */

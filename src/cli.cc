@@ -11,7 +11,7 @@ static const std::string program_description =
     "alarm - A command-line alarm application.";
 
 static const std::string usage =
-    "alarm [-h] [-d] [--resume | --stop] [-T] TIME";
+    "khal-count [-h] [-d]";
 
 /** Parses command-line arguments.
  *  
@@ -22,10 +22,7 @@ cli::Arguments* cli::parse_args(int argc, char **argv) {
     po::options_description visible("Named options");
     visible.add_options()
         ("help,h", "Produce help message.")
-        ("debug,d", "Enable debug mode.")
-        ("resume", "Resume alarm.")
-        ("stop", "Stop alarm.")
-        ("tomorrow,T", "Set alarm for tomorrow.");
+        ("debug,d", "Enable debug mode.");
 
     po::options_description hidden("Hidden options");
     hidden.add_options()
@@ -52,9 +49,6 @@ cli::Arguments* cli::parse_args(int argc, char **argv) {
     auto flag_is_set = [vm](std::string flag) { return (vm.count(flag) > 0) ? true : false; };
 
     args->debug = flag_is_set("debug");
-    args->resume = flag_is_set("resume");
-    args->stop = flag_is_set("stop");
-    args->tomorrow = flag_is_set("tomorrow");
 
     if (flag_is_set("time")) {
         args->time = vm["time"].as<std::string>();
