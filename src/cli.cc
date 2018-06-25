@@ -8,7 +8,7 @@
 namespace po = boost::program_options;
 
 static const std::string program_description =
-    "alarm - A command-line alarm application.";
+    "Sets panel countdowns for upcoming khal events.";
 
 static const std::string usage =
     "khal-count [-h] [-d]";
