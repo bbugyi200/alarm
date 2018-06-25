@@ -24,7 +24,9 @@ cli::Arguments* cli::parse_args(int argc, char **argv) {
     po::options_description visible("Named options");
     visible.add_options()
         ("help,h", "Produce help message.")
-        ("debug,d", "Enable debug mode.");
+        ("debug,d", "Enable debug mode.")
+        ("khal", "Set countdowns for upcoming khal events.")
+        ;
 
     po::options_description hidden("Hidden options");
     hidden.add_options()

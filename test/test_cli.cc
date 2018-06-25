@@ -19,6 +19,7 @@ TEST(cli, test_parse_args)
     strcpy(argv[2], TIME);
     auto args = cli::parse_args(ARG_COUNT+1, argv);
     CHECK_TRUE(args->debug);
+    CHECK_FALSE(args->khal);
     CHECK_EQUAL(args->time, TIME);
 
     for (int i = 1; i < ARG_COUNT+1; ++i) {

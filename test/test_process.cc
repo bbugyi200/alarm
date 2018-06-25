@@ -20,7 +20,7 @@ TEST(OldProcessStillAlive, test_pid)
     CHECK_EQUAL(pid, PID);
 }
 
-static const char *pid_fname = "/run/user/1000/khal-count/pid";
+static const char *pid_fname = "/run/user/1000/countdown/pid";
 
 TEST_GROUP(create_pid)
 {
