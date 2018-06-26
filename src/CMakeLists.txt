@@ -1,7 +1,7 @@
 include(../shared.cmake)
 
 file(GLOB SOURCES "*.cc")
-add_executable(alarm ${SOURCES})
-install(TARGETS alarm DESTINATION bin)
+add_executable(countdown ${SOURCES})
+install(TARGETS countdown DESTINATION bin)
 
-prog_opts("alarm")
+prog_opts("countdown")

@@ -11,10 +11,9 @@ namespace process {
      * The OldProcessStillAlive exception is thrown if an old instance of this program is still
      * running. 
      **/
-    class OldProcessStillAlive : public std::exception {
-        public:
-            int pid;
-            OldProcessStillAlive(const int);
+    struct OldProcessStillAlive : public std::exception {
+        int pid;
+        OldProcessStillAlive(const int);
     };
 }
 

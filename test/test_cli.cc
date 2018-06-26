@@ -1,5 +1,3 @@
-#include "CppUTest/TestHarness.h"
-#include "CppUTestExt/MockSupport.h"
 #include "test.h"
 
 TEST_GROUP(cli)

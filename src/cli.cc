@@ -51,8 +51,8 @@ cli::Arguments* cli::parse_args(int argc, char **argv) {
     cli::Arguments *args = new Arguments;
 
     auto flag_is_set = [vm](std::string flag) { return (vm.count(flag) > 0) ? true : false; };
-
     args->debug = flag_is_set("debug");
+    args->khal = flag_is_set("khal");
 
     if (flag_is_set("time")) {
         args->time = vm["time"].as<std::string>();

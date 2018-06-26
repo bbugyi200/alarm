@@ -1,5 +1,3 @@
-#include "CppUTest/TestHarness.h"
-#include "CppUTestExt/MockSupport.h"
 #include "test.h"
 
 TEST_GROUP(OldProcessStillAlive)
@@ -35,17 +33,17 @@ TEST_GROUP(create_pid)
 TEST(create_pid, test_file_creation)
 {
     process::create_pid();
-    std::ifstream infile(pid_fname);
-    CHECK_TRUE(infile.good());
+    std::ifstream ifile(pid_fname);
+    CHECK_TRUE(ifile.good());
 }
 
 TEST(create_pid, test_pid)
 {
     process::create_pid();
     int expected_pid = getpid();
-    std::ifstream infile(pid_fname);
+    std::ifstream ifile(pid_fname);
     int actual_pid;
-    infile >> actual_pid;
+    ifile >> actual_pid;
 
     CHECK_EQUAL(expected_pid, actual_pid);
 }
