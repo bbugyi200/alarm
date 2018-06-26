@@ -6,8 +6,9 @@
 
 #include <gutils.h>
 #include <process.h>
+#include <shared.h>
 
-static const char *pid_fname = "/run/user/1000/countdown/pid";
+static const std::string pid_fname = XDG_RUNTIME_DIR + "/pid";
 
 process::OldProcessStillAlive::OldProcessStillAlive(const int pid_) { pid = pid_; }
 

@@ -6,14 +6,13 @@
 #include <boost/program_options/positional_options.hpp>
 
 #include <cli.h>
+#include <shared.h>
 
 namespace po = boost::program_options;
 
-static const std::string program_description =
-    "Sets panel countdowns for upcoming khal events.";
+static const std::string program_description = "Sets panel countdowns for upcoming khal events.";
 
-static const std::string usage =
-    "countdown [-h] [-d]";
+static const std::string usage = PROJECT_NAME + " [-h] [-d]";
 
 /** Parses command-line arguments.
  *  
