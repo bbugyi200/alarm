@@ -12,5 +12,7 @@ file(GLOB SOURCES "../src/[^main]*.cc")
 file(GLOB TESTS "*.cc")
 add_executable(runtests ${SOURCES} ${TESTS})
 target_link_libraries(runtests imp_cpputest)
+target_link_libraries(runtests gutils)
+target_include_directories(runtests PUBLIC ../include)
 
 prog_opts("runtests")

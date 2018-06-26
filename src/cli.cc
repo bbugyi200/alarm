@@ -5,7 +5,7 @@
 #include <boost/program_options/variables_map.hpp>
 #include <boost/program_options/positional_options.hpp>
 
-#include "cli.h"
+#include <cli.h>
 
 namespace po = boost::program_options;
 

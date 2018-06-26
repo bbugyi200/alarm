@@ -10,8 +10,8 @@
 #include <cstdio>
 #include <unistd.h>
 
-#include "../src/cli.h"
-#include "../src/process.h"
+#include <cli.h>
+#include <process.h>
 
 
 #endif /* INCLUDE_TEST */

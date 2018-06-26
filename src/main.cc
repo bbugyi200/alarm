@@ -2,8 +2,8 @@
 
 #include <signal.h>
 
-#include "cli.h"
-#include "process.h"
+#include <cli.h>
+#include <process.h>
 
 void sig_usr1_handler(int signum) {
     exit(signum);
