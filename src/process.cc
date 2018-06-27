@@ -4,7 +4,6 @@
 #include <unistd.h>
 #include <signal.h>
 
-#include <gutils.h>
 #include <process.h>
 #include <shared.h>
 
