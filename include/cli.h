@@ -3,16 +3,18 @@
 
 /** Command-line argument namespace. **/
 namespace cli {
-    /** The Options structure is used to hold command-line arguments and flags. **/
-    struct Arguments {
-        bool debug;
-        bool khal;
-        std::string time;
-    };
 
-    using Arguments = struct Arguments;
+/** The Options structure is used to hold command-line arguments and flags. **/
+struct Arguments {
+    bool debug;
+    bool khal;
+    std::string time;
+};
 
-    Arguments* parse_args(int, char**);
-}
+using Arguments = struct Arguments;
+
+Arguments* parse_args(int, char**);
+
+}  // namespace cli
 
 #endif /* INCLUDED_CLI */

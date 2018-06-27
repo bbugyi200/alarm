@@ -5,7 +5,7 @@
 #include <signal.h>
 
 #include <process.h>
-#include <shared.h>
+#include <constants.h>
 
 static const std::string pid_fname = XDG_RUNTIME_DIR + "/pid";
 

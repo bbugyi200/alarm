@@ -6,7 +6,7 @@
 #include <boost/program_options/positional_options.hpp>
 
 #include <cli.h>
-#include <shared.h>
+#include <constants.h>
 
 namespace po = boost::program_options;
 
