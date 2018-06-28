@@ -14,11 +14,6 @@ namespace po = boost::program_options;
 static const std::string PROGRAM_DESCRIPTION = "Sets panel countdowns for upcoming khal events.";
 static const std::string USAGE = C::PROJECT_NAME + " [-h] [-d]";
 
-/** Parses command-line arguments.
- *  
- * @param argc: The argument count.
- * @param argv: The list of arguments.
- **/
 cli::Arguments* cli::parse_args(int argc, char **argv) {
     po::options_description visible("Named options");
     visible.add_options()
