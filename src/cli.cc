@@ -10,9 +10,8 @@
 
 namespace po = boost::program_options;
 
-static const std::string program_description = "Sets panel countdowns for upcoming khal events.";
-
-static const std::string usage = PROJECT_NAME + " [-h] [-d]";
+static const std::string PROGRAM_DESCRIPTION = "Sets panel countdowns for upcoming khal events.";
+static const std::string USAGE = PROJECT_NAME + " [-h] [-d]";
 
 /** Parses command-line arguments.
  *  
@@ -42,8 +41,8 @@ cli::Arguments* cli::parse_args(int argc, char **argv) {
     po::notify(vm);
 
     if (vm.count("help")) {
-        std::cout << program_description << "\n\n" 
-                  << "usage: " << usage << "\n\n"
+        std::cout << PROGRAM_DESCRIPTION << "\n\n" 
+                  << "usage: " << USAGE << "\n\n"
                   << visible << std::endl;
     }
 
