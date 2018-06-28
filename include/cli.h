@@ -5,13 +5,11 @@
 namespace cli {
 
 /** The Options structure is used to hold command-line arguments and flags. **/
-struct Arguments {
+typedef struct {
     bool debug;
     bool khal;
     std::string time;
-};
-
-using Arguments = struct Arguments;
+} Arguments;
 
 Arguments* parse_args(int, char**);
 

@@ -7,7 +7,9 @@
 #include <process.h>
 #include <constants.h>
 
-static const std::string pid_fname = XDG_RUNTIME_DIR + "/pid";
+namespace C = constants;
+
+static const std::string pid_fname = C::XDG_RUNTIME_DIR + "/pid";
 
 process::OldProcessStillAlive::OldProcessStillAlive(const int pid_) { pid = pid_; }
 

@@ -8,10 +8,11 @@
 #include <cli.h>
 #include <constants.h>
 
+namespace C = constants;
 namespace po = boost::program_options;
 
 static const std::string PROGRAM_DESCRIPTION = "Sets panel countdowns for upcoming khal events.";
-static const std::string USAGE = PROJECT_NAME + " [-h] [-d]";
+static const std::string USAGE = C::PROJECT_NAME + " [-h] [-d]";
 
 /** Parses command-line arguments.
  *  
