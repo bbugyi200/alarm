@@ -6,7 +6,6 @@ namespace cli {
 // The Options structure is used to hold command-line arguments and flags.
 typedef struct {
     bool debug;
-    bool khal;
     std::string time;
 } Arguments;
 

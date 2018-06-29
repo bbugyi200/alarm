@@ -15,7 +15,7 @@ void create_pid();
 // running. 
 struct OldProcessStillAlive : public std::exception {
     int pid;
-    OldProcessStillAlive(const int);
+    OldProcessStillAlive(const int pid_): pid(pid_) { };
 };
 
 }  // namespace process

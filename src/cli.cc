@@ -11,7 +11,7 @@
 namespace C = constants;
 namespace po = boost::program_options;
 
-static const std::string PROGRAM_DESCRIPTION = "Sets panel countdowns for upcoming khal events.";
+static const std::string PROGRAM_DESCRIPTION = "Sets panel countdowns.";
 static const std::string USAGE = C::PROJECT_NAME + " [-h] [-d]";
 
 cli::Arguments* cli::parse_args(int argc, char **argv) {
@@ -19,7 +19,6 @@ cli::Arguments* cli::parse_args(int argc, char **argv) {
     visible.add_options()
         ("help,h", "Produce help message.")
         ("debug,d", "Enable debug mode.")
-        ("khal", "Set countdowns for upcoming khal events.")
         ;
 
     po::options_description hidden("Hidden options");
@@ -46,7 +45,6 @@ cli::Arguments* cli::parse_args(int argc, char **argv) {
 
     auto flag_is_set = [vm](std::string flag) { return (vm.count(flag) > 0) ? true : false; };
     args->debug = flag_is_set("debug");
-    args->khal = flag_is_set("khal");
 
     if (flag_is_set("time")) {
         args->time = vm["time"].as<std::string>();

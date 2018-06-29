@@ -11,8 +11,6 @@ namespace C = constants;
 
 static const std::string pid_fname = C::XDG_RUNTIME_DIR + "/pid";
 
-process::OldProcessStillAlive::OldProcessStillAlive(const int pid_) { pid = pid_; }
-
 void process::create_pid() {
     int pid = getpid();
     std::ifstream ifile(pid_fname);
