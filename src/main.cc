@@ -4,6 +4,7 @@
 
 #include <cli.h>
 #include <process.h>
+#include <timer.h>
 
 void sig_usr1_handler(int signum) {
     exit(signum);
@@ -20,4 +21,7 @@ int main(int argc, char *argv[])
         kill(e.pid, SIGUSR1);
         return 0;
     }
+
+    Timer timer{args->time};
+    timer.start();
 }

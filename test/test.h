@@ -1,17 +1,19 @@
 #ifndef INCLUDE_TEST
 #define INCLUDE_TEST
 
-#include "CppUTest/TestHarness.h"
-#include "CppUTestExt/MockSupport.h"
+#include "gtest/gtest.h"
+#include "gmock/gmock.h"
 
-#include <string.h>
+#include <chrono>
+#include <cstdio>
 #include <iostream>
 #include <fstream>
-#include <cstdio>
+#include <string.h>
 #include <unistd.h>
 
 #include <cli.h>
 #include <process.h>
+#include <timer.h>
 
 
 #endif /* INCLUDE_TEST */
