@@ -1,5 +1,18 @@
 #include "test.h"
 
+static const char *pid_fname = "/run/user/1000/countdown/pid";
+
+class create_pid : public testing::Test {
+    protected:
+        void SetUp () {
+            std::ifstream ifile(pid_fname);
+            if (ifile.good()) {
+                std::remove(pid_fname);
+            }
+        }
+};
+
+
 TEST(OldProcessStillAlive, test_pid)
 {
     static const int PID = 123;
@@ -13,18 +26,6 @@ TEST(OldProcessStillAlive, test_pid)
 
     EXPECT_EQ(pid, PID);
 }
-
-static const char *pid_fname = "/run/user/1000/countdown/pid";
-
-class create_pid : public ::testing::Test {
-    protected:
-        virtual void SetUp () {
-            std::ifstream ifile(pid_fname);
-            if (ifile.good()) {
-                std::remove(pid_fname);
-            }
-        }
-};
 
 TEST_F(create_pid, test_file_creation)
 {

@@ -8,11 +8,11 @@ class Timer {
     private:
         std::string time;
 
+        std::chrono::seconds get_duration();
+
     public:
         Timer(std::string time_) : time{time_} { }
-        auto get_time_point();
-        std::chrono::seconds get_duration();
-        void start();
+        std::string str();
 };
 
 #endif /* INCLUDED_TIMER */

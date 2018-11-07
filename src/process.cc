@@ -22,9 +22,10 @@ void process::create_pid() {
         if (kill(old_pid, 0) == 0) {
             throw process::OldProcessStillAlive(old_pid);
         }
+    } else {
+        ifile.close();
     }
 
-    ifile.close();
     std::ofstream ofile(pid_fname);
     ofile << pid;
     ofile.close();

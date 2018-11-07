@@ -23,5 +23,4 @@ int main(int argc, char *argv[])
     }
 
     Timer timer{args->time};
-    timer.start();
 }

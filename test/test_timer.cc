@@ -1,9 +1,7 @@
 #include "test.h"
 
-TEST(timer, start)
+TEST(timer, str)
 {
-    Timer timer();
-    auto now = std::chrono::steady_clock::now();
-    std::chrono::seconds expected{600};
-    auto then = now + expected;
+    Timer timer("10:30");
+    EXPECT_EQ(timer.str(), "1:30");
 }
